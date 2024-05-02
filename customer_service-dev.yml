@@ -14,3 +14,10 @@ spring:
     properties:
       hibernate:
         format-sql: true
+  cache:
+    type: redis
+    redis:
+      cache-null-values: true
+      #time-to-live: 40000
+  zipkin:
+    baseUrl: http://localhost:9411
