@@ -35,6 +35,8 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       auto-offset-reset: earliest
       group-id: reservation-group
+
+      
 kafka:
   topic:
     reservationCreated: reservation-created
