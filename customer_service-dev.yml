@@ -35,11 +35,6 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       auto-offset-reset: earliest
       group-id: customer-group
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: "*"
 
       
 kafka:
