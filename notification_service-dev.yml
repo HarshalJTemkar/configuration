@@ -1,1 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/notification?createDatabaseIfNotExist=true&useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    password: mysql
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        format-sql: true
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: 6379      
+  cache:
+    type: redis
+    redis:
+      cache-null-values: true
+      #time-to-live: 40000  
+  zipkin:
+    baseUrl: http://${ZIPKIN_HOST:localhost}:9411
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+      group-id: notification-group
 
+      
+kafka:
+  topic:
+    notificationCreated: notification-created
+    reservationCreated: reservation-created
+    customerRegistered: customer-registered
