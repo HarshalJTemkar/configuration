@@ -39,7 +39,7 @@ spring:
         spring:
           json:
             trusted:
-              packages: *
+              packages: "*"
 
       
 kafka:
