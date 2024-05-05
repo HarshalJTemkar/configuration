@@ -40,3 +40,4 @@ spring:
 kafka:
   topic:
     reservationCreated: reservation-created
+    notificationCreated: notification-created
