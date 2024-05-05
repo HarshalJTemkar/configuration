@@ -40,3 +40,4 @@ spring:
 kafka:
   topic:
     customerRegistered: customer-created
+    notificationCreated: notification-created
