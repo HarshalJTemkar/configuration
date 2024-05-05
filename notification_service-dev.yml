@@ -46,3 +46,4 @@ kafka:
   topic:
     notificationCreated: notification-created
     reservationCreated: reservation-created
+    customerRegistered: customer-created
