@@ -10,7 +10,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: customer_service
-                fallbackuri: forward:/orderServiceFallBack
+                fallbackuri: forward:/customerServiceFallBack
             - name: RequestRateLimiter
         - id: payment_service
           uri: lb://payment_service
